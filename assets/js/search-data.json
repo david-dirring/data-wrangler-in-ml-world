@@ -2,8 +2,8 @@
   
     
         "post0": {
-            "title": "Have you ever wanted to build an **EASY** method to detect if there are **ANY** data issues on your **batch prediction process**?",
-            "content": "I have a project at work where we batch load predictions into an app daily. . We have a training process that we rerun weekly, but our batch prediction process (test-inference process) runs multiple times per day (we may not run multiple times per day forever, still in pilot stage). Much of the data changes intraday, so I have to be sure that the inference data that we feed into our weekly trained model has the same charateristics as the data that it trained on. . . .",
+            "title": "Is your batch prediction data is similar enough to your train data?",
+            "content": ". . I have a project at work where we batch load predictions into an app daily. . We have a training process that we rerun weekly, but our batch prediction process (test-inference process) runs multiple times per day (we may not run multiple times per day forever, still in pilot stage). Much of the data changes intraday, so I have to be sure that the inference data that we feed into our weekly trained model has the same charateristics as the data that it trained on. .",
             "url": "https://david-dirring.github.io/data-wrangler-in-ml-world/2021/06/03/_06_04_no_more_just_hoping_my_data_is_right.html",
             "relUrl": "/2021/06/03/_06_04_no_more_just_hoping_my_data_is_right.html",
             "date": " • Jun 3, 2021"
