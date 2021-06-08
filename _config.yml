@@ -7,7 +7,7 @@
 # https://learnxinyminutes.com/docs/yaml/
 
 title: David Dirring's Data Science & Machine Learning Blog
-description: I am a data wrangler at heart, trying to make it work in a ML World. I will be using this blog to help document my journey.
+description: Data wrangler at heart, trying to make it work in a ML World. I will be using this blog to help document my journey.
 github_username: david-dirring
 # you can comment the below line out if your repo name is not different than your baseurl
 github_repo: "data-wrangler-in-ml-world"
