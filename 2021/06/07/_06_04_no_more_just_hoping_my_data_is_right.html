@@ -77,7 +77,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      3 min read
     
 </span></p>
 
@@ -154,6 +154,13 @@ window.onload = wrap_img;
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<hr />
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Simple-BQML-Script-&amp;-Model-to-Alert-You-To-Data-Issues">Simple BQML Script &amp; Model to Alert You To Data Issues<a class="anchor-link" href="#Simple-BQML-Script-&amp;-Model-to-Alert-You-To-Data-Issues"> </a></h2>
 </div>
 </div>
@@ -173,6 +180,55 @@ I love BigQuery. I love how fast &amp; powerful it is. I also love the work they
 <li>If issue, then <strong>return the features</strong> that are contributing to the data 
 issue.</li>
 </ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Steps 1 &amp; 2:</strong> 
+<img src="https://github.com/david-dirring/data-wrangler-in-ml-world/blob/master/_notebooks/my_icons/no_more_just_hoping_query_time_periods_join.png?raw=1" alt="" /></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Output from query above to help you understand the data: 
+  <img src="https://github.com/david-dirring/data-wrangler-in-ml-world/blob/master/_notebooks/my_icons/no_more_just_hoping_20_random_rows.png?raw=1" alt="" /></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Steps 3 &amp; 4:</strong> BQML script to create the model to determine if there are data issues: 
+  <img src="https://github.com/david-dirring/data-wrangler-in-ml-world/blob/master/_notebooks/my_icons/no_more_just_hoping_10k_random_rows_union_together.png?raw=1" alt="" /></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Steps 5:</strong> Check AUC &amp; fail if above threshold: 
+  <img src="https://github.com/david-dirring/data-wrangler-in-ml-world/blob/master/_notebooks/my_icons/no_more_just_hoping_error_running_query.png?raw=1" alt="" /></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Steps 6:</strong> return top contributing features: 
+  <img src="https://github.com/david-dirring/data-wrangler-in-ml-world/blob/master/_notebooks/my_icons/no_more_just_hoping_auc_is_bad.png?raw=1" alt="" /></p>
+<p>if AUC is below .65, then no issues.
+  <img src="https://github.com/david-dirring/data-wrangler-in-ml-world/blob/master/_notebooks/my_icons/no_more_just_hoping_auc_is_fine.png?raw=1" alt="" /></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If you would like to look at the full script, please follow this link (coming!)</p>
 
 </div>
 </div>
