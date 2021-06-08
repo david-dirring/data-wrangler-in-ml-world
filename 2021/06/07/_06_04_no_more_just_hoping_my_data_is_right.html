@@ -4,19 +4,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Tackle Data Drift with BQML | David Dirring’s Data Science &amp; Machine Learning Blog</title>
+<title>Tackle Data Drift with BigQueryML | David Dirring’s Data Science &amp; Machine Learning Blog</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Tackle Data Drift with BQML" />
+<meta property="og:title" content="Tackle Data Drift with BigQueryML" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Sometimes NULLs or other nuances creep into your inference data. Some call it “Data Drift” in the machine learning industry. Below you will learn how to check whether there are any data issues by building a simple model to predict whether a record is part of your “train” or “test-inference” dataset." />
-<meta property="og:description" content="Sometimes NULLs or other nuances creep into your inference data. Some call it “Data Drift” in the machine learning industry. Below you will learn how to check whether there are any data issues by building a simple model to predict whether a record is part of your “train” or “test-inference” dataset." />
-<link rel="canonical" href="https://david-dirring.github.io/data-wrangler-in-ml-world/2021/06/03/_06_04_no_more_just_hoping_my_data_is_right.html" />
-<meta property="og:url" content="https://david-dirring.github.io/data-wrangler-in-ml-world/2021/06/03/_06_04_no_more_just_hoping_my_data_is_right.html" />
+<meta name="description" content="A practical &amp; easy method to detect when you have data issues in your machine learning pipeline." />
+<meta property="og:description" content="A practical &amp; easy method to detect when you have data issues in your machine learning pipeline." />
+<link rel="canonical" href="https://david-dirring.github.io/data-wrangler-in-ml-world/2021/06/07/_06_04_no_more_just_hoping_my_data_is_right.html" />
+<meta property="og:url" content="https://david-dirring.github.io/data-wrangler-in-ml-world/2021/06/07/_06_04_no_more_just_hoping_my_data_is_right.html" />
 <meta property="og:site_name" content="David Dirring’s Data Science &amp; Machine Learning Blog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-06-03T00:00:00-05:00" />
+<meta property="article:published_time" content="2021-06-07T00:00:00-05:00" />
 <script type="application/ld+json">
-{"description":"Sometimes NULLs or other nuances creep into your inference data. Some call it “Data Drift” in the machine learning industry. Below you will learn how to check whether there are any data issues by building a simple model to predict whether a record is part of your “train” or “test-inference” dataset.","url":"https://david-dirring.github.io/data-wrangler-in-ml-world/2021/06/03/_06_04_no_more_just_hoping_my_data_is_right.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://david-dirring.github.io/data-wrangler-in-ml-world/2021/06/03/_06_04_no_more_just_hoping_my_data_is_right.html"},"headline":"Tackle Data Drift with BQML","dateModified":"2021-06-03T00:00:00-05:00","datePublished":"2021-06-03T00:00:00-05:00","@context":"https://schema.org"}</script>
+{"description":"A practical &amp; easy method to detect when you have data issues in your machine learning pipeline.","url":"https://david-dirring.github.io/data-wrangler-in-ml-world/2021/06/07/_06_04_no_more_just_hoping_my_data_is_right.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://david-dirring.github.io/data-wrangler-in-ml-world/2021/06/07/_06_04_no_more_just_hoping_my_data_is_right.html"},"headline":"Tackle Data Drift with BigQueryML","dateModified":"2021-06-07T00:00:00-05:00","datePublished":"2021-06-07T00:00:00-05:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/data-wrangler-in-ml-world/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://david-dirring.github.io/data-wrangler-in-ml-world/feed.xml" title="David Dirring's Data Science &amp; Machine Learning Blog" /><link rel="shortcut icon" type="image/x-icon" href="/data-wrangler-in-ml-world/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -71,13 +71,13 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Tackle Data Drift with BQML</h1><p class="page-description">Sometimes NULLs or other nuances creep into your inference data. Some call it "Data Drift" in the machine learning industry. Below you will learn how to check whether there are any data issues by building a simple model to predict whether a record is part of your "train" or "test-inference" dataset.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-06-03T00:00:00-05:00" itemprop="datePublished">
-        Jun 3, 2021
+    <h1 class="post-title p-name" itemprop="name headline">Tackle Data Drift with BigQueryML</h1><p class="page-description">A practical & easy method to detect when you have data issues in your machine learning pipeline.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-06-07T00:00:00-05:00" itemprop="datePublished">
+        Jun 7, 2021
       </time>
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -119,22 +119,60 @@ window.onload = wrap_img;
         
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="/data-wrangler-in-ml-world/images/copied_from_nb/my_icons/No_More_Just_Hoping.png" alt="" /></p>
+<p><img src="https://github.com/david-dirring/data-wrangler-in-ml-world/blob/master/_notebooks/my_icons/No_More_Just_Hoping.png?raw=1" alt="" /></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>I have a project at work where we <strong>batch load predictions</strong> into an app daily.</p>
-<p>We have a training process that we rerun weekly, but our batch prediction process (test-inference process) runs multiple times per day (we may not run multiple times per day forever, still in pilot stage).  Much of the data changes intraday, <strong>so I have to be sure that the inference data that we feed into our weekly trained model has the same charateristics as the data that it trained on.</strong></p>
+<p>I have been working on a really fun binary classification model at work.  We have a training process that runs weekly, but our batch prediction process (let's call it "test-time inference" process like Rachel Thomas does <a href="https://www.fast.ai/2017/11/13/validation-sets/">here</a>) runs multiple times per day.  Much of the feature data changes intraday, <strong>so I have to be sure that the test-time inference data that we feed into our weekly trained model (a pickle file) has the same charateristics as the data that it trained on.</strong>  I have developed a script in BigQuery to use <a href="https://cloud.google.com/bigquery-ml/docs/reference">BQML</a> that runs every time my test-time inference process runs to check that my "training" data looks similar enough to my "test-time inference" data.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="/data-wrangler-in-ml-world/images/copied_from_nb/my_icons/no_more_just_hoping_data_is_right_training_and_inference.png" alt="" /></p>
+<p><strong>LEFT SIDE OF IMAGE BELOW:</strong> When we learn about machine learning, we typically do the left side of the figure below. We get the data, we add features, we train, we hold out on some data, and see how we would do on that holdout set. What we don't learn about is how you should SAVE down that model file somewhere so that your "test-inference" process can pick it up later. We use GCP at work to store the files, so we save it down to a Google Cloud Storage bucket (equivalent of S3 at AWS).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>RIGHT SIDE OF IMAGE BELOW</strong>: Before I grab the model file and make predictions on my test-inference data, I need to be sure that this data looks similar enough to the data that the model trained on. If you do not check this, you run the risk of decreasing your accuracy. I will explain how I do this below in BigQuery.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://github.com/david-dirring/data-wrangler-in-ml-world/blob/master/_notebooks/my_icons/no_more_just_hoping_data_is_right_training_and_inference.png?raw=1" alt="" /></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Simple-BQML-Script-&amp;-Model-to-Alert-You-To-Data-Issues">Simple BQML Script &amp; Model to Alert You To Data Issues<a class="anchor-link" href="#Simple-BQML-Script-&amp;-Model-to-Alert-You-To-Data-Issues"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I have been wrangling data and data storytelling for over 13 years. 
+I love BigQuery. I love how fast &amp; powerful it is. I also love the work they are putting into BQML.</p>
+<p>For this demonstration, I will pull in a dataset from a BigQuery public dataset -- Daily Liquor Sales in Iowa. I had a friend in who lived in Iowa. I visited there a few times and was shocked when I saw liquor in a grocery store!</p>
+<p>The script below will roughly follow these steps:</p>
+<ol>
+<li><strong>Build</strong> a table </li>
+<li><strong>Split</strong> table into chunks for train / test / validation / test-inference. In real life, you'll have a process to update the test-inference dataset. The "train / test / validation" is the left side of image above. The "test-inference" is right side.</li>
+<li><strong>Grab 10k records</strong> from train and from test-inference.</li>
+<li>Build simple <strong>BQML model</strong> to predict which records are from "train" (0) or from "test-inference" (1)</li>
+<li>Look at AUC of simple model to determine if there are data issues. <strong>Fail query if AUC is above your threshold</strong>. I have found .6 or .65 work as a good threshold. AUC of .5 is basically completely random guesses, which implies that the model cannot discern which records are train and which are test-inference.</li>
+<li>If issue, then <strong>return the features</strong> that are contributing to the data 
+issue.</li>
+</ol>
 
 </div>
 </div>
@@ -143,7 +181,7 @@ window.onload = wrap_img;
 
 
 
-  </div><a class="u-url" href="/data-wrangler-in-ml-world/2021/06/03/_06_04_no_more_just_hoping_my_data_is_right.html" hidden></a>
+  </div><a class="u-url" href="/data-wrangler-in-ml-world/2021/06/07/_06_04_no_more_just_hoping_my_data_is_right.html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">
