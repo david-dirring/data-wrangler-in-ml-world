@@ -4,7 +4,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Tackle Data Drift in your ML pipeline | David Dirring’s Data Science &amp; Machine Learning Blog</title>
+<title>Tackle Data Drift in your ML pipeline | A Data Wrangler in a ML World - David Dirring’s Machine Learning Blog</title>
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Tackle Data Drift in your ML pipeline" />
 <meta property="og:locale" content="en_US" />
@@ -12,14 +12,14 @@
 <meta property="og:description" content="A practical &amp; easy method to detect when you have data issues in your machine learning pipeline." />
 <link rel="canonical" href="https://david-dirring.github.io/data-wrangler-in-ml-world/fastpages/jupyter/bqml/gcp/data/machine%20learning/2021/06/08/_06_04_tackle_data_drift_with_bqml.html" />
 <meta property="og:url" content="https://david-dirring.github.io/data-wrangler-in-ml-world/fastpages/jupyter/bqml/gcp/data/machine%20learning/2021/06/08/_06_04_tackle_data_drift_with_bqml.html" />
-<meta property="og:site_name" content="David Dirring’s Data Science &amp; Machine Learning Blog" />
+<meta property="og:site_name" content="A Data Wrangler in a ML World - David Dirring’s Machine Learning Blog" />
 <meta property="og:image" content="https://david-dirring.github.io/data-wrangler-in-ml-world/_notebooks/my_icons/No_More_Just_Hoping.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-06-08T00:00:00-05:00" />
 <script type="application/ld+json">
 {"description":"A practical &amp; easy method to detect when you have data issues in your machine learning pipeline.","url":"https://david-dirring.github.io/data-wrangler-in-ml-world/fastpages/jupyter/bqml/gcp/data/machine%20learning/2021/06/08/_06_04_tackle_data_drift_with_bqml.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://david-dirring.github.io/data-wrangler-in-ml-world/fastpages/jupyter/bqml/gcp/data/machine%20learning/2021/06/08/_06_04_tackle_data_drift_with_bqml.html"},"headline":"Tackle Data Drift in your ML pipeline","dateModified":"2021-06-08T00:00:00-05:00","datePublished":"2021-06-08T00:00:00-05:00","image":"https://david-dirring.github.io/data-wrangler-in-ml-world/_notebooks/my_icons/No_More_Just_Hoping.png","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/data-wrangler-in-ml-world/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://david-dirring.github.io/data-wrangler-in-ml-world/feed.xml" title="David Dirring's Data Science &amp; Machine Learning Blog" /><link rel="shortcut icon" type="image/x-icon" href="/data-wrangler-in-ml-world/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="/data-wrangler-in-ml-world/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://david-dirring.github.io/data-wrangler-in-ml-world/feed.xml" title="A Data Wrangler in a ML World - David Dirring's Machine Learning Blog" /><link rel="shortcut icon" type="image/x-icon" href="/data-wrangler-in-ml-world/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
 
 <script>
@@ -54,7 +54,7 @@ window.onload = wrap_img;
 </head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/data-wrangler-in-ml-world/">David Dirring&#39;s Data Science &amp; Machine Learning Blog</a><nav class="site-nav">
+  <div class="wrapper"><a class="site-title" rel="author" href="/data-wrangler-in-ml-world/">A Data Wrangler in a ML World - David Dirring&#39;s Machine Learning Blog</a><nav class="site-nav">
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />
         <label for="nav-trigger">
           <span class="menu-icon">
