@@ -143,7 +143,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>I have been working on a really fun &amp; interesting binary classification model at work. We have a training process that runs weekly, but our batch prediction process (let's call it "test-time inference" process like Rachel Thomas does <a href="https://www.fast.ai/2017/11/13/validation-sets/">here</a>) runs multiple times per day. Much of the feature data changes intraday, <strong>so I have to be sure that the test-time inference data that we feed into our weekly trained model (a pickle file) has the same charateristics as the data that it trained on.</strong>  I have developed a script in BigQuery to use <a href="https://cloud.google.com/bigquery-ml/docs/reference">BQML</a> that runs every time my test-time inference process runs to check that my "training" data looks similar enough to my "test-time inference" data. If a simple model can figure it out, then you have 
-an issue! and you should fail/stop your process! In my experience for the last 2 months, it has usually been NULLs that have caused my process to fail.</p>
+an issue! and you should fail/stop your process!</p>
 
 </div>
 </div>
