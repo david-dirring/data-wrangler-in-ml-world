@@ -6,7 +6,7 @@
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 
-title: David Dirring's Data Science & Machine Learning Blog
+title: A Data Wrangler in a ML World - David Dirring's Machine Learning Blog
 description: Data wrangler at heart, trying to make it work in a ML World. I will be using this blog to help document my journey.
 github_username: david-dirring
 # you can comment the below line out if your repo name is not different than your baseurl
