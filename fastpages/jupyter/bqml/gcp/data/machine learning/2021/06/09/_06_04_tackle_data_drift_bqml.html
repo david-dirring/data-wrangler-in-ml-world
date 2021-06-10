@@ -10,14 +10,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="A practical &amp; easy method to detect when you have data issues in your machine learning pipeline." />
 <meta property="og:description" content="A practical &amp; easy method to detect when you have data issues in your machine learning pipeline." />
-<link rel="canonical" href="https://david-dirring.github.io/data-wrangler-in-ml-world/fastpages/jupyter/bqml/gcp/data/machine%20learning/2021/06/09/_06_04_tackle_data_drift_with_bqml.html" />
-<meta property="og:url" content="https://david-dirring.github.io/data-wrangler-in-ml-world/fastpages/jupyter/bqml/gcp/data/machine%20learning/2021/06/09/_06_04_tackle_data_drift_with_bqml.html" />
+<link rel="canonical" href="https://david-dirring.github.io/data-wrangler-in-ml-world/fastpages/jupyter/bqml/gcp/data/machine%20learning/2021/06/09/_06_04_tackle_data_drift_bqml.html" />
+<meta property="og:url" content="https://david-dirring.github.io/data-wrangler-in-ml-world/fastpages/jupyter/bqml/gcp/data/machine%20learning/2021/06/09/_06_04_tackle_data_drift_bqml.html" />
 <meta property="og:site_name" content="A Data Wrangler in a ML World - David Dirring’s Machine Learning Blog" />
 <meta property="og:image" content="https://david-dirring.github.io/data-wrangler-in-ml-world/images/No_More_Just_Hoping.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-06-09T00:00:00-05:00" />
 <script type="application/ld+json">
-{"url":"https://david-dirring.github.io/data-wrangler-in-ml-world/fastpages/jupyter/bqml/gcp/data/machine%20learning/2021/06/09/_06_04_tackle_data_drift_with_bqml.html","@type":"BlogPosting","headline":"Tackle Data Drift in your ML pipeline","dateModified":"2021-06-09T00:00:00-05:00","datePublished":"2021-06-09T00:00:00-05:00","image":"https://david-dirring.github.io/data-wrangler-in-ml-world/images/No_More_Just_Hoping.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://david-dirring.github.io/data-wrangler-in-ml-world/fastpages/jupyter/bqml/gcp/data/machine%20learning/2021/06/09/_06_04_tackle_data_drift_with_bqml.html"},"description":"A practical &amp; easy method to detect when you have data issues in your machine learning pipeline.","@context":"https://schema.org"}</script>
+{"url":"https://david-dirring.github.io/data-wrangler-in-ml-world/fastpages/jupyter/bqml/gcp/data/machine%20learning/2021/06/09/_06_04_tackle_data_drift_bqml.html","@type":"BlogPosting","headline":"Tackle Data Drift in your ML pipeline","dateModified":"2021-06-09T00:00:00-05:00","datePublished":"2021-06-09T00:00:00-05:00","image":"https://david-dirring.github.io/data-wrangler-in-ml-world/images/No_More_Just_Hoping.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://david-dirring.github.io/data-wrangler-in-ml-world/fastpages/jupyter/bqml/gcp/data/machine%20learning/2021/06/09/_06_04_tackle_data_drift_bqml.html"},"description":"A practical &amp; easy method to detect when you have data issues in your machine learning pipeline.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/data-wrangler-in-ml-world/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://david-dirring.github.io/data-wrangler-in-ml-world/feed.xml" title="A Data Wrangler in a ML World - David Dirring's Machine Learning Blog" /><link rel="shortcut icon" type="image/x-icon" href="/data-wrangler-in-ml-world/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -111,14 +111,14 @@ window.onload = wrap_img;
         <div class="pb-5 d-flex flex-wrap flex-justify-end">
           <div class="px-2">
 
-    <a href="https://github.com/david-dirring/data-wrangler-in-ml-world/tree/master/_notebooks/2021_06_04_tackle_data_drift_with_bqml.ipynb" role="button" target="_blank">
+    <a href="https://github.com/david-dirring/data-wrangler-in-ml-world/tree/master/_notebooks/2021_06_04_tackle_data_drift_bqml.ipynb" role="button" target="_blank">
 <img class="notebook-badge-image" src="/data-wrangler-in-ml-world/assets/badges/github.svg" alt="View On GitHub">
     </a>
 </div>
 
           
           <div class="px-2">
-    <a href="https://colab.research.google.com/github/david-dirring/data-wrangler-in-ml-world/blob/master/_notebooks/2021_06_04_tackle_data_drift_with_bqml.ipynb" target="_blank">
+    <a href="https://colab.research.google.com/github/david-dirring/data-wrangler-in-ml-world/blob/master/_notebooks/2021_06_04_tackle_data_drift_bqml.ipynb" target="_blank">
         <img class="notebook-badge-image" src="/data-wrangler-in-ml-world/assets/badges/colab.svg" alt="Open In Colab"/>
     </a>
 </div>
@@ -141,7 +141,7 @@ window.onload = wrap_img;
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
-# file to edit: _notebooks/2021_06_04_tackle_data_drift_with_bqml.ipynb
+# file to edit: _notebooks/2021_06_04_tackle_data_drift_bqml.ipynb
 -->
 
 <div class="container" id="notebook-container">
@@ -391,7 +391,7 @@ issue.</li>
         theme="github-light"
         crossorigin="anonymous"
         async>
-</script><a class="u-url" href="/data-wrangler-in-ml-world/fastpages/jupyter/bqml/gcp/data/machine%20learning/2021/06/09/_06_04_tackle_data_drift_with_bqml.html" hidden></a>
+</script><a class="u-url" href="/data-wrangler-in-ml-world/fastpages/jupyter/bqml/gcp/data/machine%20learning/2021/06/09/_06_04_tackle_data_drift_bqml.html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">
