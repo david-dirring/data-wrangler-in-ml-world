@@ -137,6 +137,12 @@ window.onload = wrap_img;
         
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Background">Background<a class="anchor-link" href="#Background"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>I have been working on a really fun &amp; interesting binary classification model at work. We have a training process that runs weekly, but our batch prediction process (let's call it "test-time inference" process like Rachel Thomas does <a href="https://www.fast.ai/2017/11/13/validation-sets/">here</a>) runs multiple times per day. Much of the feature data changes intraday, <strong>so I have to be sure that the test-time inference data that we feed into our weekly trained model (a pickle file) has the same charateristics as the data that it trained on.</strong>  I have developed a script in BigQuery to use <a href="https://cloud.google.com/bigquery-ml/docs/reference">BQML</a> that runs every time my test-time inference process runs to check that my "training" data looks similar enough to my "test-time inference" data. If a simple model can figure it out, then you have 
 an issue! and you should fail/stop your process!</p>
 
@@ -205,6 +211,16 @@ I love BigQuery. I love how fast &amp; powerful it is. I also love the work they
 <li>If issue, then <strong>return the features</strong> that are contributing to the data 
 issue.</li>
 </ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><div class="flash">
+    <svg class="octicon octicon-info" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong>At end of this post, you&#8217;ll find the links to a colab notebook where you can run the code yourself.
+</div></p>
 
 </div>
 </div>
