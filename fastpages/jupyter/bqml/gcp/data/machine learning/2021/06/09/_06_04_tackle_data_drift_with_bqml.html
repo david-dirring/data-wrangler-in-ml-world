@@ -130,11 +130,11 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#Background">Background </a></li>
 <li class="toc-entry toc-h2"><a href="#Simple-BQML-Script-&-Model-to-Alert-You-To-Data-Issues">Simple BQML Script &amp; Model to Alert You To Data Issues </a>
 <ul>
-<li class="toc-entry toc-h3"><a href="#Steps-1-&-2:-Query-&-split-the-data">Steps 1 &amp; 2: Query &amp; split the data </a></li>
-<li class="toc-entry toc-h3"><a href="#Steps-3-&-4:-Create-the-model-in-BQML:">Steps 3 &amp; 4: Create the model in BQML: </a></li>
-<li class="toc-entry toc-h3"><a href="#Step-5:-Check-AUC-&-fail-if-above-threshold:">Step 5: Check AUC &amp; fail if above threshold: </a></li>
-<li class="toc-entry toc-h3"><a href="#Steps-6:-Return-top-contributing-features:">Steps 6: Return top contributing features: </a></li>
-<li class="toc-entry toc-h3"><a href="#In-Closing-Sleep-well-now,-your-data-is-good-to-go">In Closing Sleep well now, your data is good to go </a></li>
+<li class="toc-entry toc-h3"><a href="#Steps-1-&-2:-Query,-split-the-data">Steps 1 &amp; 2: Query, split the data </a></li>
+<li class="toc-entry toc-h3"><a href="#Steps-3-&-4:-Create-model-in-BQML:">Steps 3 &amp; 4: Create model in BQML: </a></li>
+<li class="toc-entry toc-h3"><a href="#Step-5:-Check-AUC,-fail-if-above-threshold:">Step 5: Check AUC, fail if above threshold: </a></li>
+<li class="toc-entry toc-h3"><a href="#Steps-6:-Return-top-contributing-features">Steps 6: Return top contributing features </a></li>
+<li class="toc-entry toc-h3"><a href="#In-Closing:-Sleep-well-David,-BQML-checked,-your-data-is-good-to-go">In Closing: Sleep well David, BQML checked, your data is good to go </a></li>
 </ul>
 </li>
 </ul><!--
@@ -267,8 +267,8 @@ issue.</li>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Steps-1-&amp;-2:-Query-&amp;-split-the-data">
-<a class="anchor" href="#Steps-1-&amp;-2:-Query-&amp;-split-the-data" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Steps 1 &amp; 2:</strong> Query &amp; split the data<a class="anchor-link" href="#Steps-1-&amp;-2:-Query-&amp;-split-the-data"> </a>
+<h3 id="Steps-1-&amp;-2:-Query,-split-the-data">
+<a class="anchor" href="#Steps-1-&amp;-2:-Query,-split-the-data" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Steps 1 &amp; 2:</strong> Query, split the data<a class="anchor-link" href="#Steps-1-&amp;-2:-Query,-split-the-data"> </a>
 </h3>
 <p><img src="https://github.com/david-dirring/data-wrangler-in-ml-world/blob/master/_notebooks/my_icons/no_more_just_hoping_query_time_periods_join.png?raw=1" alt=""></p>
 
@@ -295,8 +295,8 @@ issue.</li>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Steps-3-&amp;-4:-Create-the-model-in-BQML:">
-<a class="anchor" href="#Steps-3-&amp;-4:-Create-the-model-in-BQML:" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Steps 3 &amp; 4:</strong> Create the model in BQML:<a class="anchor-link" href="#Steps-3-&amp;-4:-Create-the-model-in-BQML:"> </a>
+<h3 id="Steps-3-&amp;-4:-Create-model-in-BQML:">
+<a class="anchor" href="#Steps-3-&amp;-4:-Create-model-in-BQML:" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Steps 3 &amp; 4:</strong> Create model in BQML:<a class="anchor-link" href="#Steps-3-&amp;-4:-Create-model-in-BQML:"> </a>
 </h3>
 <p><img src="https://github.com/david-dirring/data-wrangler-in-ml-world/blob/master/_notebooks/my_icons/no_more_just_hoping_10k_random_rows_union_together.png?raw=1" alt=""></p>
 
@@ -314,8 +314,8 @@ issue.</li>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Step-5:-Check-AUC-&amp;-fail-if-above-threshold:">
-<a class="anchor" href="#Step-5:-Check-AUC-&amp;-fail-if-above-threshold:" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Step 5:</strong> Check AUC &amp; fail if above threshold:<a class="anchor-link" href="#Step-5:-Check-AUC-&amp;-fail-if-above-threshold:"> </a>
+<h3 id="Step-5:-Check-AUC,-fail-if-above-threshold:">
+<a class="anchor" href="#Step-5:-Check-AUC,-fail-if-above-threshold:" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Step 5:</strong> Check AUC, fail if above threshold:<a class="anchor-link" href="#Step-5:-Check-AUC,-fail-if-above-threshold:"> </a>
 </h3>
 <p><img src="https://github.com/david-dirring/data-wrangler-in-ml-world/blob/master/_notebooks/my_icons/no_more_just_hoping_error_running_query.png?raw=1" alt=""></p>
 
@@ -333,8 +333,8 @@ issue.</li>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Steps-6:-Return-top-contributing-features:">
-<a class="anchor" href="#Steps-6:-Return-top-contributing-features:" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Steps 6:</strong> Return top contributing features:<a class="anchor-link" href="#Steps-6:-Return-top-contributing-features:"> </a>
+<h3 id="Steps-6:-Return-top-contributing-features">
+<a class="anchor" href="#Steps-6:-Return-top-contributing-features" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Steps 6:</strong> Return top contributing features<a class="anchor-link" href="#Steps-6:-Return-top-contributing-features"> </a>
 </h3>
 <p><img src="https://github.com/david-dirring/data-wrangler-in-ml-world/blob/master/_notebooks/my_icons/no_more_just_hoping_auc_is_bad.png?raw=1" alt=""></p>
 <p>if AUC is below .65, then no issues.
@@ -354,8 +354,8 @@ issue.</li>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="In-Closing-Sleep-well-now,-your-data-is-good-to-go">
-<a class="anchor" href="#In-Closing-Sleep-well-now,-your-data-is-good-to-go" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>In Closing</strong> Sleep well now, your data is good to go<a class="anchor-link" href="#In-Closing-Sleep-well-now,-your-data-is-good-to-go"> </a>
+<h3 id="In-Closing:-Sleep-well-David,-BQML-checked,-your-data-is-good-to-go">
+<a class="anchor" href="#In-Closing:-Sleep-well-David,-BQML-checked,-your-data-is-good-to-go" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>In Closing:</strong> Sleep well David, BQML checked, your data is good to go<a class="anchor-link" href="#In-Closing:-Sleep-well-David,-BQML-checked,-your-data-is-good-to-go"> </a>
 </h3>
 <p>I have implemented this process at work. I honestly sleep better knowing that I have this failsafe in place. We have to pull from over 25+ different sources for 120 or so features. If we mess something up or if an ETL process fails upstream before it gets to our process, it is wonderful to know right away instead of just watching performance plummet or watch it bounce around a day or two later.</p>
 <p>Please reach out on <a href="https://twitter.com/DavidDirring">Twitter</a> or <a href="https://www.linkedin.com/in/ddirring/">LinkedIn</a> if you have any questions.</p>
